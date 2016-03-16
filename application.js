@@ -18,6 +18,7 @@ app.use(mbaasExpress.fhmiddleware());
 app.use(cors());
 app.use(bodyParser());
 
+require('./lib/metrics.js').init(app);
 app.use('/cache', require('./lib/cache.js').router());
 
 app.use(mbaasExpress.errorHandler());
