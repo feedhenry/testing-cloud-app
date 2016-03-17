@@ -5,7 +5,8 @@ var mbaasApi = require('fh-mbaas-api');
 var mbaasExpress = mbaasApi.mbaasExpress();
 
 var securableEndpoints = [
-  '/cache'
+  '/cache',
+  '/stats'
 ];
 
 var app = express();
@@ -20,6 +21,7 @@ app.use(bodyParser());
 
 require('./lib/metrics.js').init(app);
 app.use('/cache', require('./lib/cache.js').router());
+app.use('/stats', require('./lib/stats.js').router());
 
 app.use(mbaasExpress.errorHandler());
 
