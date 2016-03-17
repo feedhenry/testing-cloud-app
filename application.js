@@ -3,10 +3,12 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var mbaasApi = require('fh-mbaas-api');
 var mbaasExpress = mbaasApi.mbaasExpress();
+var util = require('lib/util.js');
 
 var securableEndpoints = [
   '/cache',
-  '/stats'
+  '/stats',
+  '/test'
 ];
 
 var app = express();
@@ -22,6 +24,9 @@ app.use(bodyParser());
 require('./lib/metrics.js').init(app);
 app.use('/cache', require('./lib/cache.js').router());
 app.use('/stats', require('./lib/stats.js').router());
+app.get('/test', function(req, res) {
+  util.runTests(req, res, 'MBaaS API');
+});
 
 app.use(mbaasExpress.errorHandler());
 
