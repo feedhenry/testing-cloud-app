@@ -7,22 +7,25 @@ var util = require('lib/util.js');
 
 var securableEndpoints = [
   '/cache',
+  '/db',
   '/stats',
   '/test'
 ];
 
 var app = express();
 
-app.use('/sys', mbaasExpress.sys(securableEndpoints));
-app.use('/mbaas', mbaasExpress.mbaas);
-app.use(express.static(__dirname + '/public'));
-app.use(mbaasExpress.fhmiddleware());
-
 app.use(cors());
 app.use(bodyParser());
 
+app.use('/sys', mbaasExpress.sys(securableEndpoints));
+app.use('/mbaas', mbaasExpress.mbaas);
+app.use(express.static(__dirname + '/public'));
+
+app.use(mbaasExpress.fhmiddleware());
+
 require('./lib/metrics.js').init(app);
 app.use('/cache', require('./lib/cache.js').router());
+app.use('/db', require('./lib/db.js').router());
 app.use('/stats', require('./lib/stats.js').router());
 app.get('/test', function(req, res) {
   util.runTests(req, res, 'MBaaS API');
