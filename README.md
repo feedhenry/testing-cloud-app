@@ -1,8 +1,37 @@
 # testing-cloud-app
 
-TODO
-- napsat readme
-- napsat index.html
-- vycistit package.json
-- vycistit grunt.js
-- validace parametru
+Testing cloud application covering various parts of MBaaS APIs. 
+The basic usage is to deploy this application and access `/test` endpoint, 
+which will execute all tests and return results (in HTML or JSON format). 
+Tests can be executed individualy per each area or the MBaaS APIs can be 
+utilized directly via prepared endpoints.
+
+
+#### Tests endpoints
+
+- `GET /test` execute all tests
+- `GET /cache/test` execute Cache API tests
+- `GET /db/test` execute Database API tests
+- `GET /stats/test` execute Statistics API tests
+
+
+#### Cache API endpoints
+
+- `GET /cache/save`
+- `GET /cache/load`
+- `GET /cache/remove`
+
+#### Database API endpoints
+
+- `GET /db/create`
+- `GET /db/update`
+- `GET /db/read`
+- `GET /db/list`
+- `GET /db/delete`
+- `GET /db/deleteall`
+
+#### Statistics API endpoints
+
+- `GET /stats/inc`
+- `GET /stats/dec`
+- `GET /stats/timing`
