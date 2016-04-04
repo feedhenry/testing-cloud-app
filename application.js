@@ -3,7 +3,7 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var mbaasApi = require('fh-mbaas-api');
 var mbaasExpress = mbaasApi.mbaasExpress();
-var util = require('lib/util.js');
+var util = require('./lib/util');
 
 var securableEndpoints = [
   '/cache',
