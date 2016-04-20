@@ -19,7 +19,7 @@ app.use(bodyParser());
 
 app.use('/sys', mbaasExpress.sys(securableEndpoints));
 app.use('/mbaas', mbaasExpress.mbaas);
-app.use(express.static(__dirname + '/public'));
+//app.use(express.static(__dirname + '/public'));
 
 app.use(mbaasExpress.fhmiddleware());
 
@@ -31,10 +31,17 @@ app.get('/test', function(req, res) {
   util.runTests(req, res, 'MBaaS API');
 });
 
+var runtimeTimer = Date.now() / 1000;
+var startTime = new Date();
+app.get('/', function(req, res) {
+  res.send('Application started: '+ startTime +' and is running for '+ (Date.now() / 1000 - runtimeTimer) +' seconds.<br><a href="/test">/test endpoint</a>');
+
+});
+
 app.use(mbaasExpress.errorHandler());
 
 var port = process.env.FH_PORT || process.env.OPENSHIFT_NODEJS_PORT || 8001;
 var host = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 app.listen(port, host, function() {
-  console.log('App started at: ' + new Date() + ' on port: ' + port); 
+  console.log('App started at: ' + new Date() + ' on port: ' + port);
 });
