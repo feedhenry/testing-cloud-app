@@ -30,6 +30,9 @@ app.use('/stats', require('./lib/stats.js').router());
 app.get('/test', function(req, res) {
   util.runTests(req, res, 'MBaaS API');
 });
+app.get('/service', function(req, res) {
+  util.testService(req, res);
+});
 
 var runtimeTimer = Date.now() / 1000;
 var startTime = new Date();
