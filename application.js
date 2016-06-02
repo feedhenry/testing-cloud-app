@@ -27,6 +27,7 @@ require('./lib/metrics.js').init(app);
 app.use('/cache', require('./lib/cache.js').router());
 app.use('/db', require('./lib/db.js').router());
 app.use('/hash', require('./lib/hash.js').router());
+app.use('/host', require('./lib/host.js').router());
 app.use('/secure', require('./lib/secure.js').router());
 app.use('/stats', require('./lib/stats.js').router());
 app.get('/test', function(req, res) {
