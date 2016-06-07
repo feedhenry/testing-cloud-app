@@ -33,6 +33,7 @@ utilized directly via prepared endpoints.
 - `GET /db/list`
 - `GET /db/delete`
 - `GET /db/deleteall`
+- `GET /db/index`
 
 #### Hash API endpoints
 
