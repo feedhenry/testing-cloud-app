@@ -56,3 +56,7 @@ utilized directly via prepared endpoints.
 - `GET /stats/inc`
 - `GET /stats/dec`
 - `GET /stats/timing`
+
+#### Node.js runtime version endpoint
+
+- `GET /process/version`
