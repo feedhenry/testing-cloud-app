@@ -18,11 +18,9 @@ node('node') {
             print "Environment will be : ${env.NODE_ENV}"
 
             sh 'node -v'
-            sh 'npm install -g npm@2.13.5'
-            sh 'npm install -g grunt-cli'
+            sh 'sudo npm install -g grunt-cli'
             sh 'npm prune'
             sh 'npm install'
-            sh 'npm test'
 
        stage 'Cleanup'
 
