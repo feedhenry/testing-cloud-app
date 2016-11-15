@@ -21,7 +21,6 @@ node('node') {
             sh 'sudo npm install -g grunt-cli'
             sh 'npm prune'
             sh 'npm install'
-            sh 'npm test'
 
        stage 'Cleanup'
 
