@@ -18,7 +18,6 @@ node('nodejs') {
             print "Environment will be : ${env.NODE_ENV}"
 
             sh 'node -v'
-            sh 'sudo npm install -g grunt-cli'
             sh 'npm prune'
             sh 'npm install'
 
