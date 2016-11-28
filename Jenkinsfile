@@ -16,7 +16,7 @@ node('nodejs') {
             env.NODE_ENV = "test"
 
             print "Environment will be : ${env.NODE_ENV}"
-            print "Testing pull-requests"
+            print "Testing pull-requests 2"
 
             sh 'node -v'
             sh 'npm prune'
