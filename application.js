@@ -33,6 +33,7 @@ app.use('/host', require('./lib/host.js').router());
 app.use('/process', require('./lib/process.js').router());
 app.use('/secure', require('./lib/secure.js').router());
 app.use('/stats', require('./lib/stats.js').router());
+app.use('/push', require('./lib/push.js').router());
 app.get('/test', function(req, res) {
   util.runTests(req, res, 'MBaaS API');
 });
