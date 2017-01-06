@@ -1,0 +1,22 @@
+config:
+  target: 'UPDATE-ME'
+  phases:
+    - duration: 3
+      arrivalRate: 1
+  defaults:
+    headers:
+      Accept: "application/json"
+      Content-type: "application/json"
+
+scenarios:
+  - flow:
+    - post:
+        url: "/push"
+        json: {
+            "message": {
+                "alert": "Artillery Test"
+            },
+            "options": {
+                "broadcast": "true"
+            }
+        }
