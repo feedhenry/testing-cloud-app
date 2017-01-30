@@ -44,7 +44,7 @@ app.get('/service', function(req, res) {
 var runtimeTimer = Date.now() / 1000;
 var startTime = new Date();
 app.get('/', function(req, res) {
-  res.send('Application started: '+ startTime +' and is running for '+ (Date.now() / 1000 - runtimeTimer) +' seconds.<br><a href="/test">/test endpoint</a>');
+  res.send('Application started: '+ startTime +' and is running for '+ (Date.now() / 1000 - runtimeTimer) +' seconds.<br><a href="./test">/test endpoint</a>');
 
 });
 
