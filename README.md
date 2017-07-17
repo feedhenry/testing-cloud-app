@@ -6,6 +6,19 @@ which will execute all tests and return results (in HTML or JSON format).
 Tests can be executed individually per each area or the MBaaS APIs can be
 utilized directly via prepared endpoints.
 
+## Prerequisites
+
+* Redis (tested on version 3.2.0)
+  * download [redis](https://redis.io/download)
+  * unpack it and run `<redis-folder>/src/redis-server`
+* MongoDB (tested on version 3.4.3)
+  * install via brew/package manager
+  * create `admin` user with password `admin`: 
+  
+  ```
+  mongo FH_LOCAL --eval 'db.createUser({ user:"admin", pwd:"admin", roles: [{ role: "readWrite", db: "FH_LOCAL" }] })'
+  ```
+
 
 #### Tests endpoints
 
