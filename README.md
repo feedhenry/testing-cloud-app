@@ -70,6 +70,10 @@ utilized directly via prepared endpoints.
 - `GET /stats/dec`
 - `GET /stats/timing`
 
+#### Push API endpoints
+
+- `POST /push` - [about format of a message](artillery-ReadMe.md#customize-message)
+
 #### Node.js runtime version endpoint
 
 - `GET /process/version`
