@@ -28,6 +28,7 @@ app.use(mbaasExpress.fhmiddleware());
 require('./lib/metrics.js').init(app);
 app.use('/cache', require('./lib/cache.js').router());
 app.use('/db', require('./lib/db.js').router());
+app.use('/forms', require('./lib/forms.js').router());
 app.use('/hash', require('./lib/hash.js').router());
 app.use('/host', require('./lib/host.js').router());
 app.use('/process', require('./lib/process.js').router());
