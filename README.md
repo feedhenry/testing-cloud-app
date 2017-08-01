@@ -2,7 +2,7 @@
 
 Testing cloud application covering various parts of MBaaS APIs.
 The basic usage is to deploy this application and access `/test` endpoint,
-which will execute all tests and return results (in HTML or JSON format).
+which will execute all tests (except for AppForms) and return results (in HTML or JSON format).
 Tests can be executed individually per each area or the MBaaS APIs can be
 utilized directly via prepared endpoints.
 
@@ -20,6 +20,14 @@ utilized directly via prepared endpoints.
   ```
 
 
+## mbaas-art-core
+[Mbaas-art-core](https://github.com/fheng/mbaas-art) uses this app for cloud API testing. It executes all tests.
+Example usage:
+```
+grunt art-core:local --prefix mbaas-art- --core local --env dev
+```
+
+
 #### Tests endpoints
 
 - `GET /test` execute all tests
@@ -30,6 +38,7 @@ utilized directly via prepared endpoints.
 - `GET /secure/test` execute Secure API tests
 - `GET /stats/test` execute Statistics API tests
 - `GET /service` execute Service connection test (Cloud App must have permissions to call the Service)
+- `POST /forms/test` execute AppForms API tests (expects form, theme and clientApp definitions and cloudApp and project guids in JSON format)
 
 
 #### Cache API endpoints
