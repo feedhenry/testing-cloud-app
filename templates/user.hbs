@@ -1,21 +1,5 @@
 {
   "user": {
-    "name": "{{firstName}} {{lastName}}",
-    "work": "{{company}}",
-    "email": "{{email}}",
-    "dob": "{{date '1900' '2000' 'DD/MM/YYYY'}}",
-    "address": "{{int 1 100}} {{street}}",
-    "city": "{{city}}",
-    "optedin": {{boolean}}
-  },
-  "images": [
-    {{#repeat 3}}
-    "img{{@index}}.png"
-    {{/repeat}}
-  ],
-  "location": [
-    {{float -180 180 '0.00'}},
-    {{float -90 90 '0.00'}}
-  ],
-  "price": "${{int 0 99999 '0,0'}}"
+    "name": "{{firstName}} {{lastName}}"
+  }
 }
