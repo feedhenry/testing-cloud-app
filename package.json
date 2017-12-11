@@ -3,6 +3,7 @@
   "version": "0.0.3",
   "dependencies": {
     "async": "^2.5.0",
+    "bluebird": "^3.5.1",
     "body-parser": "~1.15.2",
     "chai": "^3.5.0",
     "cors": "~2.7.1",
@@ -12,6 +13,7 @@
     "fh-mbaas-api": "^8.1.0",
     "mocha": "^2.1.0",
     "request": "2.79.0",
+    "underscore": "^1.8.3",
     "winston": "^2.2.0"
   },
   "devDependencies": {
