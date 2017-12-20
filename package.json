@@ -3,7 +3,6 @@
   "version": "0.0.3",
   "dependencies": {
     "async": "^2.5.0",
-    "bluebird": "^3.5.1",
     "body-parser": "~1.15.2",
     "chai": "^3.5.0",
     "cors": "~2.7.1",
