@@ -9,7 +9,7 @@
     "dummy-json": "^1.0.0",
     "express": "~4.14.0",
     "fh-component-metrics": "^2.0.1",
-    "fh-mbaas-api": "^9.0.4",
+    "fh-mbaas-api": "^9.1.4",
     "mocha": "^2.1.0",
     "request": "2.79.0",
     "underscore": "^1.8.3",
